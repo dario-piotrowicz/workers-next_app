@@ -1,0 +1,32 @@
+name: Pull Request Checks
+
+on:
+  push:
+    branches:
+      - windows-hacking
+
+jobs:
+  checks:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-2022, ubuntu-22.04]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Install Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: "npm"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install NPM Dependencies
+        shell: bash
+        run: npm ci
+
+      - name: Running build
+        shell: bash
+        run: npm run on:build
