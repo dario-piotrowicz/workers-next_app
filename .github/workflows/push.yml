@@ -27,6 +27,6 @@ jobs:
         shell: bash
         run: npm ci
 
-      - name: Running build
+      - name: Running preview
         shell: bash
-        run: npm run on:build
+        run: npm run preview & sleep 50s; kill $!
