@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20241218.0",
-    "@opennextjs/cloudflare": "^0.3.0",
+    "@opennextjs/cloudflare": "https://pkg.pr.new/@opennextjs/cloudflare@213",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
